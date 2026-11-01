@@ -6,5 +6,12 @@
 /admin/          /admin/index.html  200
 # أي مسار تحت /admin/ لم يوجد كملف → /admin/index.html (SPA fallback للوحة التحكم)
 /admin/*         /admin/index.html  200
+
+# صفحات المنتجات: تُولَّد كملفات ثابتة عبر build_static.py إلى
+# /product/<id>/<slug>.html — نُعيد كتابة الرابط النظيف إليها.
+/product/:id/:slug   /product/:id/:slug.html   200
+# صفحة "أسعار اليوم" الديناميكية → prices.html
+/prices              /prices.html              200
+
 # أي مسار آخر لم يوجد كملف → /index.html (fallback لموقع العملاء)
 /*              /index.html         200

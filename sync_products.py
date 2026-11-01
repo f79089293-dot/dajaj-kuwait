@@ -204,6 +204,14 @@ def main():
     write_snapshot(items, args.dry_run)
     bump_index_version(version, args.dry_run)
 
+    # توليد صفحات المنتجات الثابتة (للنشر على استضافة ثابتة مثل Netlify)
+    if not args.dry_run:
+        try:
+            import build_static
+            build_static.build(items)
+        except Exception as exc:
+            log('تنبيه: تعذّر توليد الصفحات الثابتة: %r' % exc)
+
     log('')
     log('المنتجات: %d' % before)
     log('صور محفوظة محلياً: %d' % images)

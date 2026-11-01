@@ -110,10 +110,10 @@
     <script defer src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
     <!-- منتجات محلية مولّدة (عرض فوري قبل مزامنة قاعدة البيانات) -->
-    <script src="./assets/js/products-local.js?v=87be790d21"></script>
-    <script defer src="./assets/js/firebase-client.js?v=4"></script>
-    <script defer src="./assets/js/products-store.js?v=3"></script>
-    <script src="./assets/js/cart.js"></script>
+    <script src="/assets/js/products-local.js?v=87be790d21"></script>
+    <script defer src="/assets/js/firebase-client.js?v=4"></script>
+    <script defer src="/assets/js/products-store.js?v=3"></script>
+    <script src="/assets/js/cart.js"></script>
     <style>
         * {
             box-sizing: border-box;
@@ -479,7 +479,7 @@
             <div class="Header_nav__DVSK7">
                 <div class="Header_logoWithCatalog__v4fgc">
                     <a class="Logo_logo__oq6_b" href="#">
-                        <img alt="Snoonu" src="assets/images/nfc2.png" class="Logo_fullLogo__l2rPp">
+                        <img alt="Snoonu" src="/assets/images/nfc2.png" class="Logo_fullLogo__l2rPp">
                     </a>
                     <button class="CatalogButton_button__wTnA9" id="menuBtn">
                         <span>القائمة</span>
@@ -521,7 +521,7 @@
         <!-- أزرار الفلاتر الأفقية -->
         <div class="FilterPresets_wrapper__sSfR_">
             <div class="FilterPresets_filter__czMu5">
-                <img src="assets/images/free_delivery.33e8a802.svg" alt="توصيل مجاني">
+                <img src="/assets/images/free_delivery.33e8a802.svg" alt="توصيل مجاني">
                 <span>توصيل مجاني</span>
             </div>
             <div class="FilterPresets_filter__czMu5">
@@ -612,6 +612,14 @@
             return '/product/' + product._id + '/' + encodeURIComponent(slug);
         }
 
+        // مسار صورة مطلق دائماً: يعمل من الصفحة الرئيسية ومن أي رابط عميق
+        // (صفحات المنتجات على الاستضافة الثابتة قد تُخدَم من /product/<id>/<slug>)
+        function absImg(img) {
+            if (!img) return '/assets/images/nfc2.png';
+            if (/^(https?:|data:|\/)/.test(img)) return img;
+            return '/' + img.replace(/^\.?\//, '');
+        }
+
         // فتح/إغلاق درج القائمة
         function toggleMenu(open) {
             const drawer = document.getElementById('menuDrawer');
@@ -631,7 +639,7 @@
             box.innerHTML = allProducts.map(function (product) {
                 const url = productPageUrl(product);
                 if (!url) return '';
-                const img = product.img || 'assets/images/nfc2.png';
+                const img = absImg(product.img);
                 return `<a class="menu-link" href="${url}">
                     <img src="${img}" alt="" loading="lazy">
                     <span>${product.name}</span>
@@ -657,14 +665,15 @@
             if (!grid) return;
             grid.innerHTML = allProducts.map((product, index) => {
                 const url = productPageUrl(product);
+                const imgSrc = absImg(product.img);
                 const nameHtml = url
                     ? `<a href="${url}" style="color:inherit;text-decoration:none">${product.name}</a>`
                     : product.name;
                 const imgHtml = url
-                    ? `<a href="${url}"><img src="${product.img}" alt="${product.name}"></a>`
-                    : `<img src="${product.img}" alt="${product.name}">`;
+                    ? `<a href="${url}"><img src="${imgSrc}" alt="${product.name}"></a>`
+                    : `<img src="${imgSrc}" alt="${product.name}">`;
                 return `
-                <div class="ProductCard" data-price="${product.price}" data-name="${product.name}" data-desc="${(product.desc||'').replace(/"/g,'&quot;')}" data-img="${product.img}">
+                <div class="ProductCard" data-price="${product.price}" data-name="${product.name}" data-desc="${(product.desc||'').replace(/"/g,'&quot;')}" data-img="${imgSrc}">
                     <div class="ProductInfo">
                         <h3 class="ProductName">${nameHtml}</h3>
                         <p class="ProductDesc">${product.desc}</p>

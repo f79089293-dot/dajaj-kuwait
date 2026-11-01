@@ -4,59 +4,292 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://althenayanfarms.app/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-11-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://althenayanfarms.app/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://althenayanfarms.app/"/>
-    <image:image>
-      <image:loc>https://althenayanfarms.app/assets/images/nfc2.png</image:loc>
-      <image:title>مزارع الثنيان - Althenayan Farms</image:title>
-      <image:caption>متجر إلكتروني كويتي لتوصيل المنتجات الطازجة</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://althenayanfarms.app/assets/images/teen-3.jpg</image:loc>
-      <image:title>عرض التين الأخضر الفاخر - بوكس 5 كيلو</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://althenayanfarms.app/assets/images/kuwaiti-jumbo-robian-10kg-new.jpg</image:loc>
-      <image:title>روبيان عماني جامبو 10 كيلو</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://althenayanfarms.app/assets/images/sakey-5.jpg</image:loc>
-      <image:title>تمر الصقعي الملكي - بوكس 5 كيلو</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://althenayanfarms.app/assets/images/khals-8.jpg</image:loc>
-      <image:title>تمر الخلاص المكبوس - بوكس 8 كيلو</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://althenayanfarms.app/assets/images/batt-5.jpg</image:loc>
-      <image:title>عرض 5 بطات فرنسي</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://althenayanfarms.app/assets/images/hamam-10.jpg</image:loc>
-      <image:title>بوكس حمامات طازج</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://althenayanfarms.app/assets/images/bolti-10.jpg</image:loc>
-      <image:title>سمك بلطي طازج 10 كيلو</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://althenayanfarms.app/assets/images/saso-8.jpg</image:loc>
-      <image:title>بوكس دجاج عربي ساسو</image:title>
-    </image:image>
+    <image:image><image:loc>https://althenayanfarms.app/assets/images/products/137ac7620d6a0407.webp</image:loc><image:title>توت ملكي طازج</image:title></image:image>
+    <image:image><image:loc>https://althenayanfarms.app/assets/images/products/0c8c1ee5d479af63.webp</image:loc><image:title>عسل السدر الكويتي المميز</image:title></image:image>
+    <image:image><image:loc>https://althenayanfarms.app/assets/images/products/49001983e7f062e3.webp</image:loc><image:title>عسل السدر الكويتي المميز</image:title></image:image>
+    <image:image><image:loc>https://althenayanfarms.app/assets/images/teen-50.jpg</image:loc><image:title>عرض 50 عصفور التين</image:title></image:image>
+    <image:image><image:loc>https://althenayanfarms.app/assets/images/products/6788ecc768d939f1.jpg</image:loc><image:title>تمر خلاص جامبو</image:title></image:image>
+    <image:image><image:loc>https://althenayanfarms.app/assets/images/products/93a934c2e2679fac.jpg</image:loc><image:title>حمام زاجل</image:title></image:image>
+    <image:image><image:loc>https://althenayanfarms.app/assets/images/products/93a934c2e2679fac.jpg</image:loc><image:title>حمام زاجل</image:title></image:image>
+    <image:image><image:loc>https://althenayanfarms.app/assets/images/products/effb0bf6403e9c9a.jpg</image:loc><image:title>تين اخضر العبدلي الفاخر</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://althenayanfarms.app/prices</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://althenayanfarms.app/prices"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://althenayanfarms.app/prices"/>
   </url>
   <url>
     <loc>https://althenayanfarms.app/cartepage.html</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-11-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://althenayanfarms.app/cartepage.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://althenayanfarms.app/cartepage.html"/>
-    <image:image>
-      <image:loc>https://althenayanfarms.app/assets/images/nfc2.png</image:loc>
-      <image:title>سلة الطلبات - مزارع الثنيان</image:title>
-    </image:image>
+  </url>
+  <url>
+    <loc>https://althenayanfarms.app/terms.html</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://althenayanfarms.app/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://althenayanfarms.app/terms.html"/>
+  </url>
+  <url>
+    <loc>https://althenayanfarms.app/privacy.html</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://althenayanfarms.app/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://althenayanfarms.app/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://althenayanfarms.app/returns.html</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://althenayanfarms.app/returns.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://althenayanfarms.app/returns.html"/>
+  </url>
+  <url>
+    <loc>https://althenayanfarms.app/product/pvPnj5vZw8zujIWVvBZo/%D8%AA%D9%88%D8%AA-%D9%85%D9%84%D9%83%D9%8A-%D8%B7%D8%A7%D8%B2%D8%AC</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://althenayanfarms.app/product/pvPnj5vZw8zujIWVvBZo/%D8%AA%D9%88%D8%AA-%D9%85%D9%84%D9%83%D9%8A-%D8%B7%D8%A7%D8%B2%D8%AC"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://althenayanfarms.app/product/pvPnj5vZw8zujIWVvBZo/%D8%AA%D9%88%D8%AA-%D9%85%D9%84%D9%83%D9%8A-%D8%B7%D8%A7%D8%B2%D8%AC"/>
+    <image:image><image:loc>https://althenayanfarms.app/assets/images/products/137ac7620d6a0407.webp</image:loc><image:title>توت ملكي طازج</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://althenayanfarms.app/product/loesbyo7vHo9InRezI1g/%D8%B9%D8%B3%D9%84-%D8%A7%D9%84%D8%B3%D8%AF%D8%B1-%D8%A7%D9%84%D9%83%D9%88%D9%8A%D8%AA%D9%8A-%D8%A7%D9%84%D9%85%D9%85%D9%8A%D8%B2</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://althenayanfarms.app/product/loesbyo7vHo9InRezI1g/%D8%B9%D8%B3%D9%84-%D8%A7%D9%84%D8%B3%D8%AF%D8%B1-%D8%A7%D9%84%D9%83%D9%88%D9%8A%D8%AA%D9%8A-%D8%A7%D9%84%D9%85%D9%85%D9%8A%D8%B2"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://althenayanfarms.app/product/loesbyo7vHo9InRezI1g/%D8%B9%D8%B3%D9%84-%D8%A7%D9%84%D8%B3%D8%AF%D8%B1-%D8%A7%D9%84%D9%83%D9%88%D9%8A%D8%AA%D9%8A-%D8%A7%D9%84%D9%85%D9%85%D9%8A%D8%B2"/>
+    <image:image><image:loc>https://althenayanfarms.app/assets/images/products/0c8c1ee5d479af63.webp</image:loc><image:title>عسل السدر الكويتي المميز</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://althenayanfarms.app/product/flkFwemf1bycshXSv2AJ/%D8%B9%D8%B3%D9%84-%D8%A7%D9%84%D8%B3%D8%AF%D8%B1-%D8%A7%D9%84%D9%83%D9%88%D9%8A%D8%AA%D9%8A-%D8%A7%D9%84%D9%85%D9%85%D9%8A%D8%B2</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://althenayanfarms.app/product/flkFwemf1bycshXSv2AJ/%D8%B9%D8%B3%D9%84-%D8%A7%D9%84%D8%B3%D8%AF%D8%B1-%D8%A7%D9%84%D9%83%D9%88%D9%8A%D8%AA%D9%8A-%D8%A7%D9%84%D9%85%D9%85%D9%8A%D8%B2"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://althenayanfarms.app/product/flkFwemf1bycshXSv2AJ/%D8%B9%D8%B3%D9%84-%D8%A7%D9%84%D8%B3%D8%AF%D8%B1-%D8%A7%D9%84%D9%83%D9%88%D9%8A%D8%AA%D9%8A-%D8%A7%D9%84%D9%85%D9%85%D9%8A%D8%B2"/>
+    <image:image><image:loc>https://althenayanfarms.app/assets/images/products/49001983e7f062e3.webp</image:loc><image:title>عسل السدر الكويتي المميز</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://althenayanfarms.app/product/21rBvYjGHYuU7e05merX/%D8%B9%D8%B1%D8%B6-50-%D8%B9%D8%B5%D9%81%D9%88%D8%B1-%D8%A7%D9%84%D8%AA%D9%8A%D9%86</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://althenayanfarms.app/product/21rBvYjGHYuU7e05merX/%D8%B9%D8%B1%D8%B6-50-%D8%B9%D8%B5%D9%81%D9%88%D8%B1-%D8%A7%D9%84%D8%AA%D9%8A%D9%86"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://althenayanfarms.app/product/21rBvYjGHYuU7e05merX/%D8%B9%D8%B1%D8%B6-50-%D8%B9%D8%B5%D9%81%D9%88%D8%B1-%D8%A7%D9%84%D8%AA%D9%8A%D9%86"/>
+    <image:image><image:loc>https://althenayanfarms.app/assets/images/teen-50.jpg</image:loc><image:title>عرض 50 عصفور التين</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://althenayanfarms.app/product/chNFHFvTno27Rni4dA3k/%D8%AA%D9%85%D8%B1-%D8%AE%D9%84%D8%A7%D8%B5-%D8%AC%D8%A7%D9%85%D8%A8%D9%88</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://althenayanfarms.app/product/chNFHFvTno27Rni4dA3k/%D8%AA%D9%85%D8%B1-%D8%AE%D9%84%D8%A7%D8%B5-%D8%AC%D8%A7%D9%85%D8%A8%D9%88"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://althenayanfarms.app/product/chNFHFvTno27Rni4dA3k/%D8%AA%D9%85%D8%B1-%D8%AE%D9%84%D8%A7%D8%B5-%D8%AC%D8%A7%D9%85%D8%A8%D9%88"/>
+    <image:image><image:loc>https://althenayanfarms.app/assets/images/products/6788ecc768d939f1.jpg</image:loc><image:title>تمر خلاص جامبو</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://althenayanfarms.app/product/xIKpzPzXEb4vyqb56tkq/%D8%AD%D9%85%D8%A7%D9%85-%D8%B2%D8%A7%D8%AC%D9%84</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://althenayanfarms.app/product/xIKpzPzXEb4vyqb56tkq/%D8%AD%D9%85%D8%A7%D9%85-%D8%B2%D8%A7%D8%AC%D9%84"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://althenayanfarms.app/product/xIKpzPzXEb4vyqb56tkq/%D8%AD%D9%85%D8%A7%D9%85-%D8%B2%D8%A7%D8%AC%D9%84"/>
+    <image:image><image:loc>https://althenayanfarms.app/assets/images/products/93a934c2e2679fac.jpg</image:loc><image:title>حمام زاجل</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://althenayanfarms.app/product/p9mSIOsF32G0cilWQnvt/%D8%AD%D9%85%D8%A7%D9%85-%D8%B2%D8%A7%D8%AC%D9%84</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://althenayanfarms.app/product/p9mSIOsF32G0cilWQnvt/%D8%AD%D9%85%D8%A7%D9%85-%D8%B2%D8%A7%D8%AC%D9%84"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://althenayanfarms.app/product/p9mSIOsF32G0cilWQnvt/%D8%AD%D9%85%D8%A7%D9%85-%D8%B2%D8%A7%D8%AC%D9%84"/>
+    <image:image><image:loc>https://althenayanfarms.app/assets/images/products/93a934c2e2679fac.jpg</image:loc><image:title>حمام زاجل</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://althenayanfarms.app/product/5cfFS0nEJ8E6zVLtONSc/%D8%AA%D9%8A%D9%86-%D8%A7%D8%AE%D8%B6%D8%B1-%D8%A7%D9%84%D8%B9%D8%A8%D8%AF%D9%84%D9%8A-%D8%A7%D9%84%D9%81%D8%A7%D8%AE%D8%B1</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://althenayanfarms.app/product/5cfFS0nEJ8E6zVLtONSc/%D8%AA%D9%8A%D9%86-%D8%A7%D8%AE%D8%B6%D8%B1-%D8%A7%D9%84%D8%B9%D8%A8%D8%AF%D9%84%D9%8A-%D8%A7%D9%84%D9%81%D8%A7%D8%AE%D8%B1"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://althenayanfarms.app/product/5cfFS0nEJ8E6zVLtONSc/%D8%AA%D9%8A%D9%86-%D8%A7%D8%AE%D8%B6%D8%B1-%D8%A7%D9%84%D8%B9%D8%A8%D8%AF%D9%84%D9%8A-%D8%A7%D9%84%D9%81%D8%A7%D8%AE%D8%B1"/>
+    <image:image><image:loc>https://althenayanfarms.app/assets/images/products/effb0bf6403e9c9a.jpg</image:loc><image:title>تين اخضر العبدلي الفاخر</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://althenayanfarms.app/product/3dJVqXNWYIAS9qOjamCA/%D8%B3%D9%85%D9%83-%D8%A7%D9%84%D8%A8%D9%84%D8%B7%D9%8A</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://althenayanfarms.app/product/3dJVqXNWYIAS9qOjamCA/%D8%B3%D9%85%D9%83-%D8%A7%D9%84%D8%A8%D9%84%D8%B7%D9%8A"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://althenayanfarms.app/product/3dJVqXNWYIAS9qOjamCA/%D8%B3%D9%85%D9%83-%D8%A7%D9%84%D8%A8%D9%84%D8%B7%D9%8A"/>
+    <image:image><image:loc>https://althenayanfarms.app/assets/images/products/464d07923446889b.webp</image:loc><image:title>سمك البلطي</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://althenayanfarms.app/product/9kO1qx9xwOQxaUPIWIJe/%D8%A8%D9%8A%D8%B6-%D8%AF%D8%AC%D8%A7%D8%AC-%D8%B9%D8%B1%D8%A8%D9%8A</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://althenayanfarms.app/product/9kO1qx9xwOQxaUPIWIJe/%D8%A8%D9%8A%D8%B6-%D8%AF%D8%AC%D8%A7%D8%AC-%D8%B9%D8%B1%D8%A8%D9%8A"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://althenayanfarms.app/product/9kO1qx9xwOQxaUPIWIJe/%D8%A8%D9%8A%D8%B6-%D8%AF%D8%AC%D8%A7%D8%AC-%D8%B9%D8%B1%D8%A8%D9%8A"/>
+    <image:image><image:loc>https://althenayanfarms.app/assets/images/products/2c4404c7422c6f9b.webp</image:loc><image:title>بيض دجاج عربي</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://althenayanfarms.app/product/v7flepe09O840aJcMmlw/%D8%B9%D8%B1%D8%B6-%D8%AA%D9%85%D8%B1-%D8%A7%D9%84%D8%B5%D9%82%D8%B9%D9%8A-%D8%A7%D9%84%D9%85%D9%84%D9%83%D9%8A</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://althenayanfarms.app/product/v7flepe09O840aJcMmlw/%D8%B9%D8%B1%D8%B6-%D8%AA%D9%85%D8%B1-%D8%A7%D9%84%D8%B5%D9%82%D8%B9%D9%8A-%D8%A7%D9%84%D9%85%D9%84%D9%83%D9%8A"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://althenayanfarms.app/product/v7flepe09O840aJcMmlw/%D8%B9%D8%B1%D8%B6-%D8%AA%D9%85%D8%B1-%D8%A7%D9%84%D8%B5%D9%82%D8%B9%D9%8A-%D8%A7%D9%84%D9%85%D9%84%D9%83%D9%8A"/>
+    <image:image><image:loc>https://althenayanfarms.app/assets/images/sakey-5.jpg</image:loc><image:title>عرض تمر الصقعي الملكي</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://althenayanfarms.app/product/YFQkJbigZpNIO63IZtAv/%D8%B9%D8%B1%D8%B6-%D8%A7%D9%84%D8%AA%D9%8A%D9%86-%D8%A7%D9%84%D8%A3%D8%AE%D8%B6%D8%B1-%D8%A7%D9%84%D9%81%D8%A7%D8%AE%D8%B1</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://althenayanfarms.app/product/YFQkJbigZpNIO63IZtAv/%D8%B9%D8%B1%D8%B6-%D8%A7%D9%84%D8%AA%D9%8A%D9%86-%D8%A7%D9%84%D8%A3%D8%AE%D8%B6%D8%B1-%D8%A7%D9%84%D9%81%D8%A7%D8%AE%D8%B1"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://althenayanfarms.app/product/YFQkJbigZpNIO63IZtAv/%D8%B9%D8%B1%D8%B6-%D8%A7%D9%84%D8%AA%D9%8A%D9%86-%D8%A7%D9%84%D8%A3%D8%AE%D8%B6%D8%B1-%D8%A7%D9%84%D9%81%D8%A7%D8%AE%D8%B1"/>
+    <image:image><image:loc>https://althenayanfarms.app/assets/images/teen-3.jpg</image:loc><image:title>عرض التين الأخضر الفاخر</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://althenayanfarms.app/product/aYLUz1zdzt7RWRkuyJlI/%D8%B9%D8%B1%D8%B6-%D8%AA%D9%85%D8%B1-%D8%A7%D9%84%D8%AE%D9%84%D8%A7%D8%B5-%D8%A7%D9%84%D9%85%D9%83%D8%A8%D9%88%D8%B3</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://althenayanfarms.app/product/aYLUz1zdzt7RWRkuyJlI/%D8%B9%D8%B1%D8%B6-%D8%AA%D9%85%D8%B1-%D8%A7%D9%84%D8%AE%D9%84%D8%A7%D8%B5-%D8%A7%D9%84%D9%85%D9%83%D8%A8%D9%88%D8%B3"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://althenayanfarms.app/product/aYLUz1zdzt7RWRkuyJlI/%D8%B9%D8%B1%D8%B6-%D8%AA%D9%85%D8%B1-%D8%A7%D9%84%D8%AE%D9%84%D8%A7%D8%B5-%D8%A7%D9%84%D9%85%D9%83%D8%A8%D9%88%D8%B3"/>
+    <image:image><image:loc>https://althenayanfarms.app/assets/images/khals-8.jpg</image:loc><image:title>عرض تمر الخلاص المكبوس</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://althenayanfarms.app/product/hL12T9KFTb15dqYivRLk/%D8%B9%D8%B1%D8%B6-%D8%B1%D8%A8%D9%8A%D8%A7%D9%86-10-%D9%83%D9%8A%D9%84%D9%88</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://althenayanfarms.app/product/hL12T9KFTb15dqYivRLk/%D8%B9%D8%B1%D8%B6-%D8%B1%D8%A8%D9%8A%D8%A7%D9%86-10-%D9%83%D9%8A%D9%84%D9%88"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://althenayanfarms.app/product/hL12T9KFTb15dqYivRLk/%D8%B9%D8%B1%D8%B6-%D8%B1%D8%A8%D9%8A%D8%A7%D9%86-10-%D9%83%D9%8A%D9%84%D9%88"/>
+    <image:image><image:loc>https://althenayanfarms.app/assets/images/products/9d347f7215403ff3.avif</image:loc><image:title>عرض ربيان 10 كيلو</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://althenayanfarms.app/product/NevFP4IX6CIN7N85sGhz/%D8%B9%D8%B1%D8%B6-%D8%B1%D8%A8%D9%8A%D8%A7%D9%86-10-%D9%83%D9%8A%D9%84%D9%88</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://althenayanfarms.app/product/NevFP4IX6CIN7N85sGhz/%D8%B9%D8%B1%D8%B6-%D8%B1%D8%A8%D9%8A%D8%A7%D9%86-10-%D9%83%D9%8A%D9%84%D9%88"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://althenayanfarms.app/product/NevFP4IX6CIN7N85sGhz/%D8%B9%D8%B1%D8%B6-%D8%B1%D8%A8%D9%8A%D8%A7%D9%86-10-%D9%83%D9%8A%D9%84%D9%88"/>
+    <image:image><image:loc>https://althenayanfarms.app/assets/images/products/9d347f7215403ff3.avif</image:loc><image:title>عرض ربيان 10 كيلو</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://althenayanfarms.app/product/3Y318d2q1lRijCweDZgD/%D8%B9%D8%B1%D8%B6-10-%D8%A8%D8%B7%D8%A7%D8%AA-%D9%81%D8%B1%D9%86%D8%B3%D9%8A</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://althenayanfarms.app/product/3Y318d2q1lRijCweDZgD/%D8%B9%D8%B1%D8%B6-10-%D8%A8%D8%B7%D8%A7%D8%AA-%D9%81%D8%B1%D9%86%D8%B3%D9%8A"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://althenayanfarms.app/product/3Y318d2q1lRijCweDZgD/%D8%B9%D8%B1%D8%B6-10-%D8%A8%D8%B7%D8%A7%D8%AA-%D9%81%D8%B1%D9%86%D8%B3%D9%8A"/>
+    <image:image><image:loc>https://althenayanfarms.app/assets/images/batt-10.jpg</image:loc><image:title>عرض 10 بطات فرنسي</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://althenayanfarms.app/product/mYacbAoh78n05fBn5RRu/%D8%B9%D8%B1%D8%B6-5-%D8%A8%D8%B7%D8%A7%D8%AA-%D9%81%D8%B1%D9%86%D8%B3%D9%8A</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://althenayanfarms.app/product/mYacbAoh78n05fBn5RRu/%D8%B9%D8%B1%D8%B6-5-%D8%A8%D8%B7%D8%A7%D8%AA-%D9%81%D8%B1%D9%86%D8%B3%D9%8A"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://althenayanfarms.app/product/mYacbAoh78n05fBn5RRu/%D8%B9%D8%B1%D8%B6-5-%D8%A8%D8%B7%D8%A7%D8%AA-%D9%81%D8%B1%D9%86%D8%B3%D9%8A"/>
+    <image:image><image:loc>https://althenayanfarms.app/assets/images/batt-5.jpg</image:loc><image:title>عرض 5 بطات فرنسي</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://althenayanfarms.app/product/IE3CVwu8yYLa4yGaIyZX/%D8%B9%D8%B1%D8%B6-%D9%83%D9%84-%D8%A7%D9%84%D9%83%D9%88%D9%8A%D8%AA-%D8%A7%D9%84%D8%AC%D8%AF%D9%8A%D8%AF</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://althenayanfarms.app/product/IE3CVwu8yYLa4yGaIyZX/%D8%B9%D8%B1%D8%B6-%D9%83%D9%84-%D8%A7%D9%84%D9%83%D9%88%D9%8A%D8%AA-%D8%A7%D9%84%D8%AC%D8%AF%D9%8A%D8%AF"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://althenayanfarms.app/product/IE3CVwu8yYLa4yGaIyZX/%D8%B9%D8%B1%D8%B6-%D9%83%D9%84-%D8%A7%D9%84%D9%83%D9%88%D9%8A%D8%AA-%D8%A7%D9%84%D8%AC%D8%AF%D9%8A%D8%AF"/>
+    <image:image><image:loc>https://althenayanfarms.app/assets/images/kuwaiti-jumbo-robian-10kg-new.jpg</image:loc><image:title>عرض كل الكويت الجديد</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://althenayanfarms.app/product/x1LoJzT5vmlKGcyhUwX4/%D8%A8%D8%B7%D8%A9-%D9%81%D8%B1%D9%86%D8%B3%D9%8A</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://althenayanfarms.app/product/x1LoJzT5vmlKGcyhUwX4/%D8%A8%D8%B7%D8%A9-%D9%81%D8%B1%D9%86%D8%B3%D9%8A"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://althenayanfarms.app/product/x1LoJzT5vmlKGcyhUwX4/%D8%A8%D8%B7%D8%A9-%D9%81%D8%B1%D9%86%D8%B3%D9%8A"/>
+    <image:image><image:loc>https://althenayanfarms.app/assets/images/batt-1.jpg</image:loc><image:title>بطة فرنسي</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://althenayanfarms.app/product/Rwyqq8v6uSVT74YmJcJu/%D8%A8%D9%88%D9%83%D8%B3-5-%D8%AD%D9%85%D8%A7%D9%85%D8%A7%D8%AA</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://althenayanfarms.app/product/Rwyqq8v6uSVT74YmJcJu/%D8%A8%D9%88%D9%83%D8%B3-5-%D8%AD%D9%85%D8%A7%D9%85%D8%A7%D8%AA"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://althenayanfarms.app/product/Rwyqq8v6uSVT74YmJcJu/%D8%A8%D9%88%D9%83%D8%B3-5-%D8%AD%D9%85%D8%A7%D9%85%D8%A7%D8%AA"/>
+    <image:image><image:loc>https://althenayanfarms.app/assets/images/hamam-10.jpg</image:loc><image:title>بوكس 5 حمامات</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://althenayanfarms.app/product/mkGyZByzrDeR02tLPN5N/%D8%A8%D9%88%D9%83%D8%B3-10-%D8%AD%D9%85%D8%A7%D9%85%D8%A7%D8%AA</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://althenayanfarms.app/product/mkGyZByzrDeR02tLPN5N/%D8%A8%D9%88%D9%83%D8%B3-10-%D8%AD%D9%85%D8%A7%D9%85%D8%A7%D8%AA"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://althenayanfarms.app/product/mkGyZByzrDeR02tLPN5N/%D8%A8%D9%88%D9%83%D8%B3-10-%D8%AD%D9%85%D8%A7%D9%85%D8%A7%D8%AA"/>
+    <image:image><image:loc>https://althenayanfarms.app/assets/images/hamam-10.jpg</image:loc><image:title>بوكس 10 حمامات</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://althenayanfarms.app/product/sAXD2bZ5XETmiamlktPX/%D8%A8%D9%88%D9%83%D8%B3-20-%D8%AD%D9%85%D8%A7%D9%85%D8%A9</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://althenayanfarms.app/product/sAXD2bZ5XETmiamlktPX/%D8%A8%D9%88%D9%83%D8%B3-20-%D8%AD%D9%85%D8%A7%D9%85%D8%A9"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://althenayanfarms.app/product/sAXD2bZ5XETmiamlktPX/%D8%A8%D9%88%D9%83%D8%B3-20-%D8%AD%D9%85%D8%A7%D9%85%D8%A9"/>
+    <image:image><image:loc>https://althenayanfarms.app/assets/images/hamam-20.jpg</image:loc><image:title>بوكس 20 حمامة</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://althenayanfarms.app/product/vEEfaaVImuwesArw5h2A/%D8%A8%D9%88%D9%83%D8%B3-10-%D8%AD%D9%85%D8%A7%D9%85%D8%A7%D8%AA-%D8%B2%D8%A7%D8%AC%D9%84</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://althenayanfarms.app/product/vEEfaaVImuwesArw5h2A/%D8%A8%D9%88%D9%83%D8%B3-10-%D8%AD%D9%85%D8%A7%D9%85%D8%A7%D8%AA-%D8%B2%D8%A7%D8%AC%D9%84"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://althenayanfarms.app/product/vEEfaaVImuwesArw5h2A/%D8%A8%D9%88%D9%83%D8%B3-10-%D8%AD%D9%85%D8%A7%D9%85%D8%A7%D8%AA-%D8%B2%D8%A7%D8%AC%D9%84"/>
+    <image:image><image:loc>https://althenayanfarms.app/assets/images/zagel-10.jpg</image:loc><image:title>بوكس 10 حمامات زاجل</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://althenayanfarms.app/product/Lz6Q4CKw5ITfSGRnGXs3/%D8%A7%D9%84%D8%A8%D9%88%D9%83%D8%B3-%D8%A7%D9%84%D8%B5%D8%BA%D9%8A%D8%B1---%D8%B3%D9%85%D9%83-%D8%A7%D9%84%D8%A8%D9%84%D8%B7%D9%8A</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://althenayanfarms.app/product/Lz6Q4CKw5ITfSGRnGXs3/%D8%A7%D9%84%D8%A8%D9%88%D9%83%D8%B3-%D8%A7%D9%84%D8%B5%D8%BA%D9%8A%D8%B1---%D8%B3%D9%85%D9%83-%D8%A7%D9%84%D8%A8%D9%84%D8%B7%D9%8A"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://althenayanfarms.app/product/Lz6Q4CKw5ITfSGRnGXs3/%D8%A7%D9%84%D8%A8%D9%88%D9%83%D8%B3-%D8%A7%D9%84%D8%B5%D8%BA%D9%8A%D8%B1---%D8%B3%D9%85%D9%83-%D8%A7%D9%84%D8%A8%D9%84%D8%B7%D9%8A"/>
+    <image:image><image:loc>https://althenayanfarms.app/assets/images/bolti-5.jpg</image:loc><image:title>البوكس الصغير - سمك البلطي</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://althenayanfarms.app/product/fDwe1T8XsLL1rHh7eD5Q/%D8%A7%D9%84%D8%A8%D9%88%D9%83%D8%B3-%D8%A7%D9%84%D9%83%D8%A8%D9%8A%D8%B1---%D8%B3%D9%85%D9%83-%D8%A7%D9%84%D8%A8%D9%84%D8%B7%D9%8A</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://althenayanfarms.app/product/fDwe1T8XsLL1rHh7eD5Q/%D8%A7%D9%84%D8%A8%D9%88%D9%83%D8%B3-%D8%A7%D9%84%D9%83%D8%A8%D9%8A%D8%B1---%D8%B3%D9%85%D9%83-%D8%A7%D9%84%D8%A8%D9%84%D8%B7%D9%8A"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://althenayanfarms.app/product/fDwe1T8XsLL1rHh7eD5Q/%D8%A7%D9%84%D8%A8%D9%88%D9%83%D8%B3-%D8%A7%D9%84%D9%83%D8%A8%D9%8A%D8%B1---%D8%B3%D9%85%D9%83-%D8%A7%D9%84%D8%A8%D9%84%D8%B7%D9%8A"/>
+    <image:image><image:loc>https://althenayanfarms.app/assets/images/bolti-10.jpg</image:loc><image:title>البوكس الكبير - سمك البلطي</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://althenayanfarms.app/product/UJtUaF9LJvmMJZlYwDX2/%D8%A8%D9%88%D9%83%D8%B3-10-%D8%AF%D8%AC%D8%A7%D8%AC-%D8%B9%D8%B1%D8%A8%D9%8A-%D8%B3%D8%A7%D8%B3%D9%88</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://althenayanfarms.app/product/UJtUaF9LJvmMJZlYwDX2/%D8%A8%D9%88%D9%83%D8%B3-10-%D8%AF%D8%AC%D8%A7%D8%AC-%D8%B9%D8%B1%D8%A8%D9%8A-%D8%B3%D8%A7%D8%B3%D9%88"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://althenayanfarms.app/product/UJtUaF9LJvmMJZlYwDX2/%D8%A8%D9%88%D9%83%D8%B3-10-%D8%AF%D8%AC%D8%A7%D8%AC-%D8%B9%D8%B1%D8%A8%D9%8A-%D8%B3%D8%A7%D8%B3%D9%88"/>
+    <image:image><image:loc>https://althenayanfarms.app/assets/images/saso-8.jpg</image:loc><image:title>بوكس 10 دجاج عربي ساسو</image:title></image:image>
   </url>
 </urlset>

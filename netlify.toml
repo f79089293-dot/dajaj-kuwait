@@ -15,6 +15,10 @@ redirects = []
 [build]
 publish = "."
 publishOrigin = "default"
+# توليد صفحات المنتجات الثابتة (product/, prices.html, feed.xml, sitemap.xml)
+# من products-snapshot.json عند كل نشر. لا يحتاج شبكة؛ وعند أي فشل نُكمل بالنشر
+# بالملفات المُلتزَمة مسبقاً (|| true) حتى لا يفشل النشر أبداً.
+command = "python3 build_static.py || true"
 
   [build.environment]
 

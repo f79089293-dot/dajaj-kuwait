@@ -128,6 +128,31 @@ python3 serve.py
 - طُبِّق نفس المنطق على `approval` و`rejection` لمنع تكرارهما بعد الانتقال.
 - **مهم:** رُفع `?v=` لـ `firebase-client.js` من `3` إلى `4` في كل الصفحات.
 
+## النشر على Netlify — صفحات المنتجات الثابتة (إصلاح كسر صفحة المنتج)
+
+**المشكلة:** عند النقر على صورة منتج كان الرابط `/product/<id>/<slug>` يفتح الصفحة الرئيسية
+بدون سكربتات (منتجات بلا سلة/طلب). السبب:
+- `serve.py` يولّد صفحة المنتج **ديناميكياً عند الطلب** (SSR)، وهذا لا يعمل على Netlify
+  (استضافة ملفات ثابتة فقط) → لا يوجد ملف في هذا المسار.
+- قاعدة `/*  /index.html  200` في `_redirects` كانت تُخدِم `index.html` بدلاً منه.
+- وبما أن `index.html` كان يُخدَم من مسار **عميق**، كانت كل مساراته النسبية
+  (`./assets/...`) تُحلّ خطأً إلى `/product/<id>/<slug>/assets/...` الذي لا يوجد، فتُعيد
+  نفس القاعدة `index.html` (HTML) مكان ملفات JS/CSS → تفشل كل السكربتات.
+
+**الحل:**
+- `build_static.py` (جديد): يولّد الملفات فعلياً من `products-snapshot.json` (بدون شبكة):
+  `product/<id>/<slug>.html` (نسختان: اسم مشفّر ومفكوك)، `prices.html`، `feed.xml`، `sitemap.xml`.
+- `_redirects`: قاعدتان قبل الـ catch-all:
+  `/product/:id/:slug  →  /product/:id/:slug.html  200` و `/prices → /prices.html  200`.
+- `netlify.toml`: أمر بناء `python3 build_static.py || true` (يعمل عند كل نشر، ولا يُفشل النشر).
+- كل مسارات الأصول صارت **مطلقة** (`/assets/...`) في `index.html` و`cartepage.html` و`knet.html`
+  و`verification.html` و`creatprogect.html`، ودالة `absImg()` في `index.html` تجعل صور المنتجات
+  مطلقة أيضاً — حماية إضافية لأي رابط عميق.
+- `sync_products.py` يستدعي `build_static.build()` تلقائياً بعد المزامنة.
+
+**مهم:** عند تعديل المنتجات شغّل `python3 sync_products.py` (يحدّث الملفات الثابتة تلقائياً)،
+أو `python3 build_static.py` مباشرة. الملفات المولّدة تُلتزَم في المستودع ليعمل النشر فوراً.
+
 ## ملاحظات
 
 - لوحة التحكم الجديدة بُنيت من HTML/JS واضح (قابل للتعديل الكامل)

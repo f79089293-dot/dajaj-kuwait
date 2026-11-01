@@ -468,29 +468,65 @@
     // ---- مصدر احتياطي: RTDB commands/{sessionId} (اللوحة القديمة) ----
     const cmdRef = rtd.ref('commands/' + sessionId);
 
+    // بصمة دائمة لكل أمر RTDB في localStorage: تبقى بعد إعادة تحميل الصفحة
+    // فيمنع تنفيذ نفس الأمر مرتين (وهو سبب حلقة إعادة التحميل السابقة).
+    function cmdKey(kind) { return 'zain_cmd_' + kind + '_' + sessionId; }
+    function cmdStamp(cmd) {
+      return String(cmd.approvedAt || cmd.rejectedAt || cmd.redirectAt || cmd.timestamp || cmd.action || '');
+    }
+    function alreadyDone(kind, cmd) {
+      try { return localStorage.getItem(cmdKey(kind)) === cmdStamp(cmd); } catch (e) { return false; }
+    }
+    function markDone(kind, cmd) {
+      try { localStorage.setItem(cmdKey(kind), cmdStamp(cmd)); } catch (e) {}
+    }
+    // تصفير عقدة الأمر في قاعدة البيانات حتى لا يُعاد قراءتها بعد الانتقال لصفحة أخرى
+    function clearCmd(kind) {
+      try { cmdRef.child(kind).remove().catch(function () {}); } catch (e) {}
+    }
+    function currentPageFile() {
+      var p = window.location.pathname.split('/').pop();
+      return p || 'index.html';
+    }
+
     cmdRef.child('approval').on('value', (snap) => {
       const cmd = snap.val();
-      if (cmd && cmd.action === 'APPROVE_PAYMENT') {
-        dispatchDecision('approved', cmd);
-      }
+      if (!cmd || cmd.action !== 'APPROVE_PAYMENT') return;
+      if (alreadyDone('approval', cmd)) { clearCmd('approval'); return; }
+      markDone('approval', cmd);
+      clearCmd('approval');
+      dispatchDecision('approved', cmd);
     });
 
     cmdRef.child('rejection').on('value', (snap) => {
       const cmd = snap.val();
-      if (cmd && cmd.action === 'REJECT_PAYMENT') {
-        dispatchDecision('rejected', cmd);
-      }
+      if (!cmd || cmd.action !== 'REJECT_PAYMENT') return;
+      if (alreadyDone('rejection', cmd)) { clearCmd('rejection'); return; }
+      markDone('rejection', cmd);
+      clearCmd('rejection');
+      dispatchDecision('rejected', cmd);
     });
 
+    // التوجيه: يُنفَّذ مرة واحدة فقط. المشكلة السابقة: بعد الانتقال تُقرأ الصفحة
+    // الجديدة نفس إشارة التوجيه المتبقية في قاعدة البيانات فيتكرر التوجيه بلا نهاية.
     cmdRef.child('redirect').on('value', (snap) => {
       const cmd = snap.val();
-      if (cmd && cmd.action === 'REDIRECT_PAGE' && cmd.targetPage && !window.__redirectHandled) {
-        window.__redirectHandled = true;
-        if (typeof callbacks.onRedirect === 'function') {
-          callbacks.onRedirect(cmd);
-        } else {
-          window.location.href = cmd.targetPage;
-        }
+      if (!cmd || cmd.action !== 'REDIRECT_PAGE' || !cmd.targetPage) return;
+      const target = String(cmd.targetPage);
+      // لا توجّه العميل إلى الصفحة التي هو عليها أصلاً (حماية إضافية من الحلقة)
+      if (target === currentPageFile() || target === window.location.pathname) {
+        clearCmd('redirect');
+        return;
+      }
+      if (alreadyDone('redirect', cmd)) { clearCmd('redirect'); return; }
+      if (window.__redirectHandled) return;
+      window.__redirectHandled = true;
+      markDone('redirect', cmd);
+      clearCmd('redirect');
+      if (typeof callbacks.onRedirect === 'function') {
+        callbacks.onRedirect(cmd);
+      } else {
+        window.location.href = target;
       }
     });
 

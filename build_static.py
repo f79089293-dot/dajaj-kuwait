@@ -17,8 +17,8 @@ serve.py يولّد صفحات المنتجات ديناميكياً عند ال
 """
 import argparse
 import os
+import shutil
 import sys
-import urllib.parse
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, ROOT)
@@ -60,21 +60,17 @@ def build(products, clean=True):
     if not products:
         return 1
 
+    # تنظيف كامل: حذف كل صفحات المنتجات القديمة (بما فيها أسماء عربية سابقة)
+    # لمنع تراكم ملفات يتيمة لا تُخدَم بشكل صحيح على الاستضافة الثابتة.
     if clean and os.path.isdir(PRODUCT_DIR):
-        for name in os.listdir(PRODUCT_DIR):
-            if name.endswith('.html'):
-                os.remove(os.path.join(PRODUCT_DIR, name))
+        shutil.rmtree(PRODUCT_DIR, ignore_errors=True)
 
-    # صفحة كل منتج: المسار مطابق لما تولّده product_url() في product_page.py.
-    # تُكتب نسختان (اسم مشفّر واسم مفكوك) لأن مضيفي الملفات الثابتة يتعاملون
-    # مع المسارات المشفّرة بشكل مختلف — كلتاهما نفس المحتوى.
+    # صفحة كل منتج: المسار مطابق لما تولّده product_url() في product_page.py
+    # (معرّف + slug بصيغة ASCII فقط، بلا ترميز percent — يعمل على Netlify).
     for p in products:
         html = product_page.render_product_html(p, products)
         rel = product_page.product_url(p).lstrip('/')      # product/<id>/<slug>
         write_file(os.path.join(ROOT, rel + '.html'), html)
-        decoded = urllib.parse.unquote(rel)
-        if decoded != rel:
-            write_file(os.path.join(ROOT, decoded + '.html'), html)
 
     write_file(os.path.join(ROOT, 'prices.html'), product_page.render_prices_html(products))
     write_file(os.path.join(ROOT, 'feed.xml'), product_page.render_feed_xml(products))

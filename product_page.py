@@ -95,13 +95,77 @@ def _parse_doc(doc):
     return item
 
 
+def _product_key(p):
+    return (p.get('name') or '', str(p.get('price') or ''), p.get('desc') or '')
+
+
+def _merge_missing(products, local):
+    """دمج بترتيب يحافظ على الموضع: قاعدة البيانات لها الأولوية، وأي منتج موجود
+    في اللقطة المرفوعة وفُقدت وثيقته يُدرَج في **موضعه الأصلي** من اللقطة (لا في
+    الأسفل). يمنع اختفاء المنتجات وتغيّر ترتيبها بعد إعادة الترتيب من اللوحة."""
+    rem = products or []
+    loc = local or []
+    rem_keys = {_product_key(p) for p in rem}
+    loc_keys = {_product_key(p) for p in loc}
+    out = []
+    seen = set()
+    recovered = 0
+
+    def push_remote(p):
+        k = _product_key(p)
+        if k not in seen:
+            seen.add(k); out.append(p)
+
+    def push_local(p):
+        nonlocal recovered
+        k = _product_key(p)
+        if k not in seen:
+            seen.add(k); out.append(p); recovered += 1
+
+    i = j = 0
+    while i < len(rem) and j < len(loc):
+        rk, lk = _product_key(rem[i]), _product_key(loc[j])
+        if rk == lk:
+            push_remote(rem[i]); i += 1; j += 1
+        elif lk not in rem_keys:
+            push_local(loc[j]); j += 1
+        elif rk not in loc_keys:
+            push_remote(rem[i]); i += 1
+        else:
+            push_remote(rem[i]); i += 1
+    while i < len(rem):
+        push_remote(rem[i]); i += 1
+    while j < len(loc):
+        push_local(loc[j]); j += 1
+
+    if recovered:
+        print('products: أُعيد %d منتجاً محلياً مفقوداً من قاعدة البيانات' % recovered, flush=True)
+    return out
+
+
+def _read_snapshot():
+    """اللقطة المرفوعة (products-snapshot.json) — مرجع استرجاع المنتجات المفقودة.
+    تُحدَّث بـ sync_products.py بعد أي تغيير شرعي (حذف/إضافة) فلا تُحيي محذوفاً."""
+    try:
+        with open(SNAPSHOT_FILE, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        return data if isinstance(data, list) else []
+    except Exception:
+        return []
+
+
 def _fetch_products():
     url = ('https://firestore.googleapis.com/v1/projects/%s/databases/(default)'
            '/documents/products?pageSize=300' % PROJECT_ID)
     res = _firestore_get(url)
     docs = res.get('documents', [])
     products = [_parse_doc(d) for d in docs]
-    products.sort(key=lambda p: p.get('order') or 0)
+    products.sort(key=lambda p: p.get('order') or 0)  # ترتيب قاعدة البيانات أولاً
+    # لا تُسقط منتجات موجودة في اللقطة اختفت وثائقها من قاعدة البيانات (إصلاح
+    # اختفاء المنتجات بعد إعادة الترتيب) — تُدرَج في موضعها الأصلي.
+    products = _merge_missing(products, _read_snapshot())
+    for idx, p in enumerate(products):  # ترقيم متسلسل يثبّت الترتيب المدمج
+        p['order'] = idx
     return products
 
 
@@ -169,15 +233,31 @@ def get_product(product_id):
 
 # ═══════════════════════ أدوات مساعدة ═══════════════════════
 
+_TRANSLIT = {
+    'ا': 'a', 'أ': 'a', 'إ': 'a', 'آ': 'a', 'ٱ': 'a',
+    'ب': 'b', 'ت': 't', 'ث': 'th', 'ج': 'j', 'ح': 'h', 'خ': 'kh',
+    'د': 'd', 'ذ': 'dh', 'ر': 'r', 'ز': 'z', 'س': 's', 'ش': 'sh',
+    'ص': 's', 'ض': 'd', 'ط': 't', 'ظ': 'dh', 'ع': 'a', 'غ': 'gh',
+    'ف': 'f', 'ق': 'q', 'ك': 'k', 'ل': 'l', 'م': 'm', 'ن': 'n',
+    'ه': 'h', 'و': 'w', 'ي': 'y', 'ى': 'a', 'ة': 'h', 'ء': '',
+    'ئ': 'y', 'ؤ': 'w', '٠': '0', '١': '1', '٢': '2', '٣': '3',
+    '٤': '4', '٥': '5', '٦': '6', '٧': '7', '٨': '8', '٩': '9',
+}
+
+
 def slugify(name):
-    """رابط لطيف من اسم المنتج (يبقي الحروف العربية)."""
-    s = re.sub(r'[^\w\s-]', '', (name or ''), flags=re.UNICODE)
-    s = re.sub(r'[\s_]+', '-', s.strip())
+    """رابط لطيف من اسم المنتج. يُولَّد بصيغة ASCII فقط (ترجمة صوتية للعربية)
+    لتجنّب خلل Netlify مع الروابط العربية/المشفّرة percent-encoding التي تمنع
+    إعادة التوجيه إلى صفحة المنتج الثابتة وتُرجع index.html (صفحة رئيسية بلا سكربتات)."""
+    translit = ''.join(_TRANSLIT.get(ch, ch) for ch in (name or ''))
+    s = re.sub(r'[^A-Za-z0-9\s-]', '', translit)
+    s = re.sub(r'[\s_]+', '-', s.strip().lower())
     return s or 'product'
 
 
 def product_url(p):
-    return '/product/%s/%s' % (p['_id'], urllib.parse.quote(slugify(p.get('name', ''))))
+    """رابط صفحة المنتج — ASCII فقط: /product/<id>/<slug> (بلا ترميز percent)."""
+    return '/product/%s/%s' % (p['_id'], slugify(p.get('name', '')))
 
 
 def abs_img(product):

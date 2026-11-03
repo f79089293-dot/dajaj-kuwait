@@ -110,9 +110,9 @@
     <script defer src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
     <!-- منتجات محلية مولّدة (عرض فوري قبل مزامنة قاعدة البيانات) -->
-    <script src="/assets/js/products-local.js?v=87be790d21"></script>
+    <script src="/assets/js/products-local.js?v=638241e3d8"></script>
     <script defer src="/assets/js/firebase-client.js?v=4"></script>
-    <script defer src="/assets/js/products-store.js?v=3"></script>
+    <script defer src="/assets/js/products-store.js?v=6"></script>
     <script src="/assets/js/cart.js"></script>
     <style>
         * {
@@ -593,23 +593,32 @@
         ];
 
         function initializeDefaultProducts() {
-            // القائمة الافتراضية المضمّنة (15) أقدم من قائمة المشروع المولّدة
-            // (LOCAL_PRODUCTS). لا تستخدمها إلا عند غياب أي مصدر آخر، وحدّث
-            // النسخة المحلية إن كانت أقل اكتمالاً حتى لا تُخفي منتجات حقيقية.
+            // ملف المشروع المولّد (LOCAL_PRODUCTS) هو اللقطة الموثوقة المولّدة من
+            // قاعدة البيانات؛ نستخدمه بدل نسخة المتصفح التي قد تحمل بيانات قديمة
+            // أو عالقة. عند غيابه نرجع للمخزّن ثم للقائمة الافتراضية.
             const fromFile = Array.isArray(window.LOCAL_PRODUCTS) ? window.LOCAL_PRODUCTS : [];
-            const stored = JSON.parse(localStorage.getItem('allProducts')) || [];
-            if (stored.length === 0) {
-                localStorage.setItem('allProducts', JSON.stringify(fromFile.length ? fromFile : defaultProducts));
-            } else if (fromFile.length > stored.length) {
-                localStorage.setItem('allProducts', JSON.stringify(fromFile));
-            }
+            let stored = [];
+            try { stored = JSON.parse(localStorage.getItem('allProducts')) || []; } catch (e) {}
+            const source = fromFile.length ? fromFile : (stored.length ? stored : defaultProducts);
+            localStorage.setItem('allProducts', JSON.stringify(source));
         }
 
         // رابط صفحة المنتج الديناميكية (SEO) — /product/<id>/<slug>
+        // ترجمة صوتية للعربية — تطابق slugify() في product_page.py تماماً
+        // ليتطابق رابط الموقع مع اسم ملف الصفحة الثابتة على Netlify.
+        const AR_TRANSLIT = { 'ا':'a','أ':'a','إ':'a','آ':'a','ٱ':'a','ب':'b','ت':'t','ث':'th','ج':'j','ح':'h','خ':'kh','د':'d','ذ':'dh','ر':'r','ز':'z','س':'s','ش':'sh','ص':'s','ض':'d','ط':'t','ظ':'dh','ع':'a','غ':'gh','ف':'f','ق':'q','ك':'k','ل':'l','م':'m','ن':'n','ه':'h','و':'w','ي':'y','ى':'a','ة':'h','ء':'','ئ':'y','ؤ':'w','٠':'0','١':'1','٢':'2','٣':'3','٤':'4','٥':'5','٦':'6','٧':'7','٨':'8','٩':'9' };
+        function slugifyName(name) {
+            let t = '';
+            for (const ch of (name || '')) t += (AR_TRANSLIT[ch] !== undefined ? AR_TRANSLIT[ch] : ch);
+            t = t.replace(/[^A-Za-z0-9\s-]/g, '').trim().toLowerCase().replace(/[\s_]+/g, '-');
+            return t || 'product';
+        }
+
+        // رابط صفحة المنتج الثابتة (SEO) — /product/<id>/<slug> بصيغة ASCII فقط
+        // (بلا ترميز percent) ليعمل على Netlify دون خلل الروابط العربية.
         function productPageUrl(product) {
             if (!product._id) return null;
-            const slug = (product.name || 'product').replace(/[^\w\s\u0600-\u06FF-]/g, '').trim().replace(/[\s_]+/g, '-');
-            return '/product/' + product._id + '/' + encodeURIComponent(slug);
+            return '/product/' + product._id + '/' + slugifyName(product.name);
         }
 
         // مسار صورة مطلق دائماً: يعمل من الصفحة الرئيسية ومن أي رابط عميق
@@ -658,8 +667,20 @@
             return Array.isArray(list) && list.length > 0 && list.every(isValidProduct);
         }
 
+        // بصمة قائمة المنتجات: تمنع إعادة رسم الشبكة (الوميض) عند وصول نفس
+        // القائمة من المزامنة/onSnapshot بعد العرض الفوري المحلي.
+        let __productsSig = null;
+        function productsSignature(list) {
+            return list.map(function (p) {
+                return [p._id || '', p.name || '', p.price || '', p.desc || '', p.img || ''].join('|');
+            }).join('\n');
+        }
+
         function renderProducts(allProducts) {
             if (!usableProducts(allProducts)) return; // لا تمسح العرض الحالي بمصدر ناقص
+            const sig = productsSignature(allProducts);
+            if (sig === __productsSig) return; // نفس القائمة المعروضة → لا إعادة رسم
+            __productsSig = sig;
             const grid = document.getElementById('productsGrid');
             renderMenuProducts(allProducts);
             if (!grid) return;

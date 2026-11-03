@@ -408,7 +408,7 @@ h1 {{ font-size: 24px; color: #111; line-height: 1.5; }}
       </div>
       <div class="buy-row">
         <button class="btn btn-add" onclick="addToCart()">🛒 إضافة للسلة</button>
-        <a class="btn btn-cart" href="/cartepage.html">إتمام الطلب</a>
+        <a class="btn btn-cart" href="/cartepage.html" onclick="buyNow(event)">إتمام الطلب</a>
       </div>
     </div>
   </article>
@@ -446,6 +446,10 @@ function addToCart() {{
   var t = document.getElementById('toast');
   t.classList.add('show');
   setTimeout(function () {{ t.classList.remove('show'); }}, 1800);
+}}
+function buyNow(e) {{
+  if (window.CartAdd) window.CartAdd(PRODUCT, 1);
+  // يُترك التنقّل الافتراضي للرابط إلى /cartepage.html ليكمل الطلب
 }}
 </script>
 </body>

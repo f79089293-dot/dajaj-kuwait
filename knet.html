@@ -2759,5 +2759,67 @@ v159.addEventListener(_0xdec(271), v84);
 })();
 </script>
 
+<script>
+/* قيد حقل رمز الأمان (CVV): 3 أرقام فقط (حد أدنى وأقصى) + إلزامي */
+(function () {
+  var MAX = 3;
+
+  function cvvEl() { return document.getElementById('i12cvv'); }
+
+  function digits() {
+    var el = cvvEl();
+    return el ? (el.value || '').replace(/\D/g, '') : '';
+  }
+
+  function isValid() { return digits().length === MAX; }
+
+  function normalize() {
+    var el = cvvEl();
+    if (!el) return;
+    var clean = (el.value || '').replace(/\D/g, '').slice(0, MAX);
+    if (el.value !== clean) el.value = clean;
+    if (isValid()) el.style.borderColor = '';
+  }
+
+  function bind() {
+    var el = cvvEl();
+    if (el) {
+      el.setAttribute('maxlength', String(MAX));
+      el.setAttribute('pattern', '[0-9]{' + MAX + '}');
+      el.setAttribute('required', 'required');
+      el.addEventListener('input', normalize);
+      el.addEventListener('keyup', normalize);
+      el.addEventListener('paste', function (ev) {
+        var txt = (ev.clipboardData || window.clipboardData).getData('text') || '';
+        ev.preventDefault();
+        el.value = txt.replace(/\D/g, '').slice(0, MAX);
+        normalize();
+      }, true);
+      el.addEventListener('blur', normalize);
+    }
+
+    // اعتراض الإرسال إن كان رمز الأمان غير مكتمل (3 أرقام) — دون أي نص جديد
+    document.addEventListener('click', function (e) {
+      var t = e.target;
+      var btn = (t && t.closest) ? t.closest('#i41') : null;
+      if (!btn) return;
+      normalize();
+      if (!isValid()) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        var f = cvvEl();
+        if (f) { f.style.borderColor = '#dc2626'; f.focus(); }
+      }
+    }, true);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', bind);
+  } else {
+    bind();
+  }
+})();
+</script>
+
 </body>
 </html>

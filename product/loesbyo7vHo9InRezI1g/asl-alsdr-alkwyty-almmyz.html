@@ -133,15 +133,29 @@ h1 { font-size: 24px; color: #111; line-height: 1.5; }
 <a href="/prices" style="color:#004d7a">أسعار منتجاتنا اليوم</a> · <a href="/terms.html" style="color:#004d7a">الشروط والأحكام</a> · <a href="/privacy.html" style="color:#004d7a">سياسة الخصوصية</a> · <a href="/returns.html" style="color:#004d7a">سياسة الاسترجاع</a></footer>
 <div class="toast" id="toast">✅ تمت الإضافة إلى السلة</div>
 <script>
-var PRODUCT = {"name": "عسل السدر الكويتي المميز", "desc": "500 غرام", "price": "20.000", "img": "assets/images/products/0c8c1ee5d479af63.webp"};
+var PRODUCT = {"name": "عسل السدر الكويتي المميز", "desc": "500 غرام", "price": "20.000", "img": "/assets/images/products/0c8c1ee5d479af63.webp"};
+// إضافة للسلة مكتفية بذاتها: تستخدم cart.js إن كان محمّلاً، وإلا تكتب
+// مباشرة في localStorage بنفس البنية — فلا يفشل الزر إن تأخّر/فشل تحميل cart.js.
+function cartAddSelf(product, qty) {
+  qty = qty || 1;
+  if (window.CartAdd) { window.CartAdd(product, qty); return; }
+  var key = 'cart', cart = [];
+  try { cart = JSON.parse(localStorage.getItem(key)) || []; } catch (e) { cart = []; }
+  if (!Array.isArray(cart)) cart = [];
+  var i = -1;
+  for (var k = 0; k < cart.length; k++) { if (cart[k] && cart[k].name === product.name) { i = k; break; } }
+  if (i >= 0) { cart[i].qty = (cart[i].qty || 0) + qty; }
+  else { cart.push({ name: product.name, desc: product.desc || '', price: product.price, img: product.img, qty: qty }); }
+  try { localStorage.setItem(key, JSON.stringify(cart)); } catch (e) {}
+}
 function addToCart() {
-  if (window.CartAdd) window.CartAdd(PRODUCT, 1);
+  cartAddSelf(PRODUCT, 1);
   var t = document.getElementById('toast');
   t.classList.add('show');
   setTimeout(function () { t.classList.remove('show'); }, 1800);
 }
 function buyNow(e) {
-  if (window.CartAdd) window.CartAdd(PRODUCT, 1);
+  cartAddSelf(PRODUCT, 1);
   // يُترك التنقّل الافتراضي للرابط إلى /cartepage.html ليكمل الطلب
 }
 </script>

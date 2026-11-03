@@ -787,6 +787,12 @@
         });
 
 
+        function absImg(img) {
+            if (!img) return '/assets/images/nfc2.png';
+            if (/^(https?:|data:|\/)/.test(img)) return img;
+            return '/' + img.replace(/^\.?\//, '');
+        }
+
         function renderCart() {
             const container = document.getElementById('cart-items-container');
             const cart = window.CartGet ? window.CartGet() : [];
@@ -802,7 +808,7 @@
                     <button class="RemoveItemBtn" onclick="removeItem('${item.name.replace(/'/g, "\\'")}')" title="حذف المنتج">✕</button>
                     <div class="CartItemDetails">
                         <div class="CartItemImg">
-                            <img src="${item.img}" alt="${item.name}">
+                            <img src="${absImg(item.img)}" alt="${item.name}">
                         </div>
                         <div>
                             <div class="CartItemName">${item.name}</div>
